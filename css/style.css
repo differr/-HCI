@@ -13,3 +13,11 @@
 :-ms-input-placeholder {  
    text-align: center; 
 }
+
+select.sl-province {
+    text-align: center;
+}
+
+input.province {
+    text-align: center;
+}

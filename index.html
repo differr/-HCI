@@ -12,14 +12,14 @@
 	<div class="container">
 		<form role="form" data-toggle="validator" id="myForm">
 			<div class="col-md-8">
-				<div class="row">
+				<div class="">
 					<h3 class="align-left">Personal Information</h3>
 				</div>
 				<div class="form-group row">
-					<!-- <label for="example-text-input" class="col-xs-2 col-form-label">Last Name</label> -->
 					<div class="col-xs-10">
 						<input class="form-control" type="text" value="" placeholder="Last Name" id="example-text-input" required>
 					</div>
+					<label style="color:red;font-size: 15px;">*</label>
 				</div>
 				<div class="form-group row">
 					<div class="col-xs-10">
@@ -30,20 +30,23 @@
 					<div class="col-xs-10">
 						<input class="form-control" type="text" value="" placeholder="First Name" id="example-text-input" required>
 					</div>
+					<label style="color:red;font-size: 15px;">*</label>
 				</div>
 				<div class="form-group row">
 					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Address" id="example-text-input">
+						<input class="form-control" type="text" value="" placeholder="Address" id="example-text-input" required>
 					</div>
+					<label style="color:red;font-size: 15px;">*</label>
 				</div>
 				<div class="form-group row">
 					<div class="col-xs-10">
-						<select class="form-control" id="sl-province">
-						    <option value="" disabled selected>Province</option>
+						<select class="sl-province form-control" id="sl-province" dir="mtl">
+						    <option value="province" class="province" disabled selected><div style="text-align: center;">Province</div></option>
 						    <option value="bangkok">Bangkok</option>
 						    <option value="nakornpathom">Nakornpathom</option>
 						</select>
 					</div>
+					<label style="color:red;font-size: 15px;">*</label>
 				</div>
 				<div class="form-group row" style="display:none;" id="sl-cityBkk">
 					<div class="col-xs-10">
@@ -55,6 +58,7 @@
 						    <option>Chatuchak</option>
 						</select>
 					</div>
+					<label style="color:red;font-size: 15px;">*</label>
 				</div>
 				<div class="form-group row" style="display:none;" id="sl-cityNPT">
 					<div class="col-xs-10">
@@ -66,52 +70,169 @@
 						    <option>Banglen</option>
 						</select>
 					</div>
+					<label style="color:red;font-size: 15px;">*</label>
 				</div>
 				<div class="form-group row">
 					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Postal Code" id="example-text-input">
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Home Phone" id="example-text-input" pattern="/\(?([0,2]{2})\)?([-]?)([0-9]{7})">
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Alternate Phone" id="example-text-input">
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="email" id="inputEmail" value="" placeholder="E-mail" data-error="Bruh, that email address is invalid" required>
+						<input class="form-control" pattern="^[0-9]*" value="" placeholder="Postal Code" id="example-text-input" data-error="Postal code is only number!">
 						<div class="help-block with-errors"></div>
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-xs-10">
-						Have you worked at Wal-mart/SAM'S CLUB before:
-						<div>
-							<label class="checkbox-inline"><input type="checkbox" value="" id="chk-no">No</label>
-							<label class="checkbox-inline"><input type="checkbox" value="" id="chk-yes">Yes</label>
+						<input class="form-control" type="tel" value="" placeholder="Home Phone" id="example-text-input" pattern="^0\d{9}">
+						<div class="help-block">example : 022222222</div>
+					</div>
+					<label style="color:red;font-size: 15px;">*</label>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10">
+						<input class="form-control" type="tel" value="" placeholder="Alternate Phone" id="example-text-input" pattern="^0\d{9}">
+						<div class="help-block">example : 022222222</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10">
+						<input class="form-control" type="email" id="inputEmail" value="" placeholder="E-mail" data-error="That email address is invalid format!" required >
+						<div class="help-block with-errors"></div>
+					</div>
+					<label style="color:red;font-size: 15px;">*</label>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10">
+						<div style="margin:20px 0 25px 0;">
+						<label>Have you worked at Wal-mart/SAM'S CLUB before : </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="optradio" id="chk-no">No
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="optradio" id="chk-yes">Yes
+						    </label>
 						</div>
 					</div>
 				</div>
 				<div id="yes-group" style="display:none;">
 					<div class="form-group row">
 						<label for="example-text-input" class="col-xs-2 col-form-label">Which Store : </label>
-						<div class="col-xs-10">
-							<input class="form-control" type="text" value="" placeholder="Last Name" id="example-text-input">
+						<div class="col-xs-8">
+							<input class="form-control" type="text" value="" placeholder="Which Store" id="example-text-input">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label>
-						<div class="col-xs-10">
-							<input class="form-control" type="text" value="" placeholder="Last Name" id="example-text-input">
+						<div class="col-xs-8">
+							<input class="form-control" type="date" value="" placeholder="" id="example-text-input">
 						</div>
 					</div>
 				</div>
-			</div>	
+				<div class="">
+					<h3 class="align-left">Position</h3>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10">
+						<input class="form-control" type="text" value="" placeholder="Position applying for" id="example-text-input">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10 row">
+						<div class="col-xs-4">
+					  		<input type="checkbox" value="" style="display: inline;"> Seasonal/Temporary</label>
+					  	</div>
+					  	<div class="col-xs-8">
+							<input class="form-control col-xs-2" type="text" value="" placeholder="Seasonal/Temporary" id="example-text-input" style="display: inline;">
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10">
+						<div style="margin:20px 0 25px 0;">
+							<label>Are you interested in : </label>
+							<div>
+							      <input type="radio" name="optradio2" id="chk-no"> Full Time(Min. of 28 hrs per week)
+							</div>
+							<div>
+							      <input type="radio" name="optradio2" id="chk-yes"> Peak Time(Less than 28 hrs per week)
+							 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-xs-10">
+						<input class="form-control" type="text" value="" placeholder="How did you learn about this opportunity?" id="example-text-input">
+					</div>
+				</div>
+				<div class="">
+					<h3 class="align-left">Availability</h3>
+				</div>
+				<div class="form-group row">
+					<label for="example-text-input" class="col-xs-4 col-form-label">Date available to start(dd/mm/yyy) : </label>
+					<div class="col-xs-6">
+						<input class="form-control" type="date" value="" placeholder="" id="example-text-input">
+					</div>
+				</div>
+				<div class="">
+					<p><i>Indicate when you are available to be scheduled(specify a.m. or p.m.). Due to the nature of our business, the more available you are, the more opportunities we can consider you for.</i> 
+					</p>
+				</div>
+				<table class="table table-bordered">
+				    <thead>
+				      <tr>
+				        <th></th>
+				        <th>Saturday</th>
+				        <th>Sunday</th>
+				        <th>Monday</th>
+				        <th>Tuesday</th>
+				        <th>Wednesday</th>
+				        <th>Thursday</th>
+				        <th>Friday</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+					  <tr>
+					  		<td>Available</td>
+					    	<td><input id="chk-sat" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					    	<td><input id="chk-sun" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					    	<td><input id="chk-mon" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					    	<td><input id="chk-tue" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					    	<td><input id="chk-wed" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					    	<td><input id="chk-thu" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					    	<td><input id="chk-fri" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+					  </tr>
+				      <tr>
+					        <td>From</td>
+					        <td><input id="tmpck-fr-sat" type="time" value="08:00" style="display: none;"></td>
+					        <td><input id="tmpck-fr-sun" type="time" value="08:00" style="display: none;"></td>
+					        <td><input id="tmpck-fr-mon" type="time" value="08:00" style="display: none;"></td>
+					        <td><input id="tmpck-fr-tue" type="time" value="08:00" style="display: none;"></td>
+					        <td><input id="tmpck-fr-wed" type="time" value="08:00" style="display: none;"></td>
+					        <td><input id="tmpck-fr-thu" type="time" value="08:00" style="display: none;"></td>
+					        <td><input id="tmpck-fr-fri" type="time" value="08:00" style="display: none;"></td>
+				      </tr>
+				      <tr>
+					        <td>To</td>
+					        <td><input id="tmpck-to-sat" type="time" value="17:00" style="display: none;"></td>
+					        <td><input id="tmpck-to-sun" type="time" value="17:00" style="display: none;"></td>
+					        <td><input id="tmpck-to-mon" type="time" value="17:00" style="display: none;"></td>
+					        <td><input id="tmpck-to-tue" type="time" value="17:00" style="display: none;"></td>
+					        <td><input id="tmpck-to-wed" type="time" value="17:00" style="display: none;"></td>
+					        <td><input id="tmpck-to-thu" type="time" value="17:00" style="display: none;"></td>
+					        <td><input id="tmpck-to-fri" type="time" value="17:00" style="display: none;"></td>
+				      </tr>
+				      <tr>
+					        <td>Overnight yes/no</td>
+					        <td><input id="chk-ovn-sat" type="checkbox" value="" style="display: none;"></td>
+					        <td><input id="chk-ovn-sun" type="checkbox" value="" style="display: none;"></td>
+					        <td><input id="chk-ovn-mon" type="checkbox" value="" style="display: none;"></td>
+					        <td><input id="chk-ovn-tue" type="checkbox" value="" style="display: none;"></td>
+					        <td><input id="chk-ovn-wed" type="checkbox" value="" style="display: none;"></td>
+					        <td><input id="chk-ovn-thu" type="checkbox" value="" style="display: none;"></td>
+					        <td><input id="chk-ovn-fri" type="checkbox" value="" style="display: none;"></td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  <center><button type="" class="btn btn-primary">Submit</button></center>
+			</div>
 		</div>
 	</form>
 </body>
@@ -119,6 +240,10 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
+		// validation form
+		$('#myForm').validator()
+
+		// select province to show dropdown city
 		$('#sl-province').change(function(){
 	  		if($(this).val() == "nakornpathom"){ 
 	  			if($('#sl-cityBkk').is(":visible")){
@@ -137,13 +262,31 @@
 	  		}
 		});
 
-		$('#myForm').validator()
-
+		// click radio button Question "Have you worked at Wal-mart/SAM'S CLUB before :"
 		$("#chk-yes").change(function() {
     		if(this.checked) {
         		$('#yes-group').show();
     		}
 		});
+		$("#chk-no").change(function() {
+    		if(this.checked) {
+        		$('#yes-group').hide();
+    		}
+		});
+
 	});	
+
+function toggleAvailableTime(obj) {
+	day = obj.id.substr(4);
+	if(obj.checked) {
+		$('#tmpck-fr-'+day).show();
+		$('#tmpck-to-'+day).show();
+		$('#chk-ovn-'+day).show();
+	}else{
+		$('#tmpck-fr-'+day).hide();
+		$('#tmpck-to-'+day).hide();
+		$('#chk-ovn-'+day).hide();
+	}
+}
 </script>
 
