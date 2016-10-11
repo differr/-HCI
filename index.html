@@ -2,11 +2,11 @@
 <html>
 <head>
 	<title></title>
-	
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="intl-tel-input-master/build/css/intlTelInput.css">
 	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="intl-tel-input-master/build/css/intlTelInput.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/validator.js"></script>
@@ -129,15 +129,18 @@
 					</div>
 					<div id="yes-group" style="display:none;">
 						<div class="form-group row">
-							<label for="example-text-input" class="col-xs-2 col-form-label">Which Store : </label>
-							<div class="col-xs-8">
+							<!-- <label for="example-text-input" class="col-xs-2 col-form-label">Which Store : </label> -->
+							<div class="col-xs-10">
 								<input class="form-control" type="text" value="" placeholder="Which Store" id="example-text-input">
 							</div>
 						</div>
-						<div class="form-group row " style="margin-bottom: 40px;">
-							<label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label>
-							<div class="col-xs-8">
-								<input class="form-control" type="date" value="" placeholder="" id="example-text-input">
+						<div class="form-group row " >
+							<!-- <label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label> -->
+							<div class="col-xs-10">
+								<div class="input-append date" id="dp2" data-date-format="mm-dd-yyyy">
+								  <input type="text" class=" form-control span2" id="dp2" placeholder="Note Dates">
+								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> -->
+								</div>
 							</div>
 						</div>
 					</div>
@@ -173,7 +176,6 @@
 								</div>
 								<div>
 								      <input type="radio" name="optradio2" id="chk-pt"> Peak Time(Less than 28 hrs per week)
-								 
 								</div>
 							</div>
 						</div>
@@ -193,10 +195,9 @@
 						<div class="form-group col-xs-12 row">
 							<label for="example-text-input" class="col-xs-4 col-form-label row" style="margin-top: 7px;">Date available to start : </label>
 							<div class="col-xs-6">
-								<!-- <input class="form-control" type="date" value="" placeholder="" id="example-text-input"> -->
 								<div class="input-append date" id="dp1" data-date-format="mm-dd-yyyy">
-								  <input type="text" class=" form-control span2" id="dp1">
-								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> -->
+								  <input type="text" class=" form-control span2" id="dp1" placeholder="mm/dd/yyyy">
+								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> <--></-->
 								</div>
 							</div>
 						</div>
@@ -319,6 +320,46 @@
         		$('.group-available').hide();
     		}
 		});
+
+		$('#dp1').click(function(){
+
+			$('#dp1').datepicker({
+		      format: "mm/dd/yyyy"
+		    }).on('change', function(){
+		        $('.datepicker').hide();
+		    });
+		    
+ 	 	});
+
+ 	 	$('#dp2').click(function(){
+			$('#dp2').datepicker({
+		      format: "mm/dd/yyyy"
+		    }).on('change', function(){
+		        $('.datepicker').hide();
+		    });
+ 	 	});
+
+
+	 	//text box season/temp=
+		$("#chk-season").change(function() {
+			if(this.checked) {
+				if($('.txtbox-season').is(":visible")){
+					$('.txtbox-season').hide();
+				}else{
+					$('.txtbox-season').show();
+				}
+			}else{
+				if($('.txtbox-season').is(":visible")){
+					$('.txtbox-season').hide();
+				}else{
+					$('.txtbox-season').show();
+				}
+			}
+		});
+
+		//input type tel
+		$("#tel-home").intlTelInput();
+		$("#tel-alt").intlTelInput();
 	});	
 
 	function toggleAvailableTime(obj) {
@@ -334,30 +375,7 @@
 		}
 	}
 
-	 $('#dp1').click(function(){
-		$('#dp1').datepicker();
- 	 });
-
- 	//text box season/temp=
-	$("#chk-season").change(function() {
-		if(this.checked) {
-			if($('.txtbox-season').is(":visible")){
-				$('.txtbox-season').hide();
-			}else{
-				$('.txtbox-season').show();
-			}
-		}else{
-			if($('.txtbox-season').is(":visible")){
-				$('.txtbox-season').hide();
-			}else{
-				$('.txtbox-season').show();
-			}
-		}
-	});
-
-	//input type tel
-	$("#tel-home").intlTelInput();
-	$("#tel-alt").intlTelInput();
+	 
 	
 </script>
 

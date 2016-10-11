@@ -1961,43 +1961,63 @@
 							'</tr>'+
 						'</tfoot>'
 	};
-	DPGlobal.template = '<div class="datepicker">'+
+	 DPGlobal.template = '<div class="datepicker dropdown-menu">'+
 							'<div class="datepicker-days">'+
-								'<table class="table-condensed">'+
+								'<table class=" table-condensed">'+
 									DPGlobal.headTemplate+
 									'<tbody></tbody>'+
-									DPGlobal.footTemplate+
 								'</table>'+
 							'</div>'+
 							'<div class="datepicker-months">'+
 								'<table class="table-condensed">'+
 									DPGlobal.headTemplate+
 									DPGlobal.contTemplate+
-									DPGlobal.footTemplate+
 								'</table>'+
 							'</div>'+
 							'<div class="datepicker-years">'+
 								'<table class="table-condensed">'+
 									DPGlobal.headTemplate+
 									DPGlobal.contTemplate+
-									DPGlobal.footTemplate+
-								'</table>'+
-							'</div>'+
-							'<div class="datepicker-decades">'+
-								'<table class="table-condensed">'+
-									DPGlobal.headTemplate+
-									DPGlobal.contTemplate+
-									DPGlobal.footTemplate+
-								'</table>'+
-							'</div>'+
-							'<div class="datepicker-centuries">'+
-								'<table class="table-condensed">'+
-									DPGlobal.headTemplate+
-									DPGlobal.contTemplate+
-									DPGlobal.footTemplate+
 								'</table>'+
 							'</div>'+
 						'</div>';
+	//'<div class="datepicker">'+
+	// 						'<div class="datepicker-days">'+
+	// 							'<table class="table-condensed">'+
+	// 								DPGlobal.headTemplate+
+	// 								'<tbody></tbody>'+
+	// 								DPGlobal.footTemplate+
+	// 							'</table>'+
+	// 						'</div>'+
+	// 						'<div class="datepicker-months">'+
+	// 							'<table class="table-condensed">'+
+	// 								DPGlobal.headTemplate+
+	// 								DPGlobal.contTemplate+
+	// 								DPGlobal.footTemplate+
+	// 							'</table>'+
+	// 						'</div>'+
+	// 						'<div class="datepicker-years">'+
+	// 							'<table class="table-condensed">'+
+	// 								DPGlobal.headTemplate+
+	// 								DPGlobal.contTemplate+
+	// 								DPGlobal.footTemplate+
+	// 							'</table>'+
+	// 						'</div>'+
+	// 						'<div class="datepicker-decades">'+
+	// 							'<table class="table-condensed">'+
+	// 								DPGlobal.headTemplate+
+	// 								DPGlobal.contTemplate+
+	// 								DPGlobal.footTemplate+
+	// 							'</table>'+
+	// 						'</div>'+
+	// 						'<div class="datepicker-centuries">'+
+	// 							'<table class="table-condensed">'+
+	// 								DPGlobal.headTemplate+
+	// 								DPGlobal.contTemplate+
+	// 								DPGlobal.footTemplate+
+	// 							'</table>'+
+	// 						'</div>'+
+	// 					'</div>';
 
 	$.fn.datepicker.DPGlobal = DPGlobal;
 
