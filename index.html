@@ -4,14 +4,14 @@
 	<title></title>
 	
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="intl-tel-input-master/build/css/intlTelInput.css">
+	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="bootstrap/js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="js/validator.js"></script>
 	<script src="intl-tel-input-master/build/js/intlTelInput.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-datepicker.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -195,7 +195,7 @@
 							<div class="col-xs-6">
 								<!-- <input class="form-control" type="date" value="" placeholder="" id="example-text-input"> -->
 								<div class="input-append date" id="dp1" data-date-format="mm-dd-yyyy">
-								  <input type="text" class="span2" id="dp1">
+								  <input type="text" class=" form-control span2" id="dp1">
 								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> -->
 								</div>
 							</div>
@@ -335,11 +335,7 @@
 	}
 
 	 $('#dp1').click(function(){
-		$('#dp1').datepicker({
-	  		onRender: function(date) {
-	    		return date.valueOf() < now.valueOf() ? 'disabled' : '';
-	    	}
-		});
+		$('#dp1').datepicker();
  	 });
 
  	//text box season/temp=
