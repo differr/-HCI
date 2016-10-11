@@ -2,255 +2,275 @@
 <html>
 <head>
 	<title></title>
+	
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/datepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="intl-tel-input-master/build/css/intlTelInput.css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-datepicker.js"></script>
 	<script type="text/javascript" src="js/validator.js"></script>
+	<script src="intl-tel-input-master/build/js/intlTelInput.js"></script>
 </head>
 <body>
 	<div class="container">
-		<form role="form" data-toggle="validator" id="myForm">
-			<div class="col-md-8">
-				<div class="">
-					<img src="pic/walmart-banner2.jpg" alt="">
-					<h4 class="align-left">Personal Information</h4>
-					<div style="    border-color: black;
-					    border-style: solid;
-					    height: 1px;
-					    border-width: 2px;
-					    margin-bottom: 20px;"></div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Last Name" id="example-text-input" required>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Middle Initial" id="example-text-input">
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="First Name" id="example-text-input" required>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Address" id="example-text-input" required>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<select class="sl-province form-control" id="sl-province" dir="mtl">
-						    <option value="province" class="province" disabled selected><div style="text-align: center;">Province</div></option>
-						    <option value="bangkok">Bangkok</option>
-						    <option value="nakornpathom">Nakornpathom</option>
-						</select>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row" style="display:none;" id="sl-cityBkk">
-					<div class="col-xs-10">
-						<select class="form-control">
-							<option disabled selected>City</option>
-						    <option>Bangrak</option>
-						    <option>Sukhumvit</option>
-						    <option>Bangkae</option>
-						    <option>Chatuchak</option>
-						</select>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row" style="display:none;" id="sl-cityNPT">
-					<div class="col-xs-10">
-						<select class="form-control">
-							<option disabled selected>City</option>
-						    <option>Mueng</option>
-						    <option>Sampran</option>
-						    <option>Nakornchaisri</option>
-						    <option>Banglen</option>
-						</select>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" pattern="^[0-9]*" value="" placeholder="Postal Code" id="example-text-input" data-error="Postal code is only number!">
-						<div class="help-block with-errors"></div>
-					</div>
-				</div>
-				<div class="form-group row" style="margin-bottom:0px;">
-					<div class="col-xs-10">
-						<input class="form-control" type="tel" value="" placeholder="Home Phone" id="example-text-input" pattern="^0\d{9}">
-						<div class="help-block">example : 022222222</div>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row" style="margin-bottom:0px;">
-					<div class="col-xs-10">
-						<input class="form-control" type="tel" value="" placeholder="Alternate Phone" id="example-text-input" pattern="^0\d{9}">
-						<div class="help-block">example : 022222222</div>
-					</div>
-				</div>
-				<div class="form-group row" style="margin-bottom:0px;">
-					<div class="col-xs-10">
-						<input class="form-control" type="email" id="inputEmail" value="" placeholder="E-mail" data-error="That email address is invalid format!" required >
-						<div class="help-block with-errors"></div>
-					</div>
-					<label style="color:red;font-size: 15px;">*</label>
-				</div>
-				<div class="form-group row" style="margin-bottom:0px;">
-					<div class="col-xs-10">
-						<div style="margin:20px 0 25px 0;">
-						<label>Have you worked at Wal-mart/SAM'S CLUB before : </label>
-						    <label class="radio-inline">
-						      <input type="radio" name="optradio" id="chk-no">No
-						    </label>
-						    <label class="radio-inline">
-						      <input type="radio" name="optradio" id="chk-yes">Yes
-						    </label>
-						</div>
-					</div>
-				</div>
-				<div id="yes-group" style="display:none;">
-					<div class="form-group row">
-						<label for="example-text-input" class="col-xs-2 col-form-label">Which Store : </label>
-						<div class="col-xs-8">
-							<input class="form-control" type="text" value="" placeholder="Which Store" id="example-text-input">
-						</div>
-					</div>
-					<div class="form-group row " style="margin-bottom: 40px;">
-						<label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label>
-						<div class="col-xs-8">
-							<input class="form-control" type="date" value="" placeholder="" id="example-text-input">
-						</div>
-					</div>
-				</div>
-				<div class="">
-					<h4 class="align-left">Position</h4>
-					<div style="    border-color: black;
-					    border-style: solid;
-					    height: 1px;
-					    border-width: 2px;
-					    margin-bottom: 20px;"></div>
-				</div>
-				<div class="form-group row">
-					<div class="col-xs-10">
-						<input class="form-control" type="text" value="" placeholder="Position applying for" id="example-text-input">
-					</div>
-				</div>
-				<div class="form-group row" style="margin-bottom: 0px;">
-					<div class="col-xs-10 row">
-						<div class="col-xs-4">
-					  		<input type="checkbox" value="" style="display: inline;"> Seasonal/Temporary</label>
-					  	</div>
-					  	<div class="col-xs-8">
-							<input class="form-control col-xs-2" type="text" value="" placeholder="Seasonal/Temporary" id="example-text-input" style="display: inline;">
-						</div>
-					</div>
-				</div>
-				<div class="form-group row" style="margin-bottom: 0px;">
-					<div class="col-xs-10">
-						<div style="margin:20px 0 25px 0;">
-							<label>Are you interested in : </label>
-							<div>
-							      <input type="radio" name="optradio2" id="chk-ft"> Full Time(Min. of 28 hrs per week)
-							</div>
-							<div>
-							      <input type="radio" name="optradio2" id="chk-pt"> Peak Time(Less than 28 hrs per week)
-							 
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="form-group row" style="margin-bottom: 40px;">
-					<div class="col-xs-10">
-						<textarea  class="form-control" type="text" value="" placeholder="How did you learn about this opportunity?" id="example-text-input"></textarea>
-					</div>
-				</div>
-				<div class="group-available" style="display: none;">
-					<h4 class="align-left">Availability</h4>
-					<div style="    border-color: black;
-					    border-style: solid;
-					    height: 1px;
-					    border-width: 2px;
-					    margin-bottom: 20px;"></div>
-					<div class="form-group col-xs-12 row">
-						<label for="example-text-input" class="col-xs-4 col-form-label row" style="margin-top: 7px;">Date available to start : </label>
-						<div class="col-xs-6">
-							<input class="form-control" type="date" value="" placeholder="" id="example-text-input">
-						</div>
-					</div>
+		<div style="display: block;margin: auto;width: 80%;">
+			<form role="form" data-toggle="validator" id="myForm">
+				<div class="col-md-12">
 					<div class="">
-						<p><i>Indicate when you are available to be scheduled(specify a.m. or p.m.). Due to the nature of our business, the more available you are, the more opportunities we can consider you for.</i> 
-						</p>
+						<img src="pic/banner1.png" alt="">
+						<h4 class="align-left"><b>Personal Information</b></h4>
+						<div style="    border-color: black;
+						    border-style: solid;
+						    height: 1px;
+						    border-width: 2px;
+						    margin-bottom: 20px;"></div>
 					</div>
-					<table class="table table-bordered">
-					    <thead>
-					      <tr>
-					        <th></th>
-					        <th>Saturday</th>
-					        <th>Sunday</th>
-					        <th>Monday</th>
-					        <th>Tuesday</th>
-					        <th>Wednesday</th>
-					        <th>Thursday</th>
-					        <th>Friday</th>
-					      </tr>
-					    </thead>
-					    <tbody>
-						  <tr>
-						  		<td>Available</td>
-						    	<td><input id="chk-sat" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						    	<td><input id="chk-sun" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						    	<td><input id="chk-mon" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						    	<td><input id="chk-tue" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						    	<td><input id="chk-wed" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						    	<td><input id="chk-thu" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						    	<td><input id="chk-fri" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
-						  </tr>
-					      <tr>
-						        <td>From</td>
-						        <td><input id="tmpck-fr-sat" type="time" value="08:00" style="display: none;"></td>
-						        <td><input id="tmpck-fr-sun" type="time" value="08:00" style="display: none;"></td>
-						        <td><input id="tmpck-fr-mon" type="time" value="08:00" style="display: none;"></td>
-						        <td><input id="tmpck-fr-tue" type="time" value="08:00" style="display: none;"></td>
-						        <td><input id="tmpck-fr-wed" type="time" value="08:00" style="display: none;"></td>
-						        <td><input id="tmpck-fr-thu" type="time" value="08:00" style="display: none;"></td>
-						        <td><input id="tmpck-fr-fri" type="time" value="08:00" style="display: none;"></td>
-					      </tr>
-					      <tr>
-						        <td>To</td>
-						        <td><input id="tmpck-to-sat" type="time" value="17:00" style="display: none;"></td>
-						        <td><input id="tmpck-to-sun" type="time" value="17:00" style="display: none;"></td>
-						        <td><input id="tmpck-to-mon" type="time" value="17:00" style="display: none;"></td>
-						        <td><input id="tmpck-to-tue" type="time" value="17:00" style="display: none;"></td>
-						        <td><input id="tmpck-to-wed" type="time" value="17:00" style="display: none;"></td>
-						        <td><input id="tmpck-to-thu" type="time" value="17:00" style="display: none;"></td>
-						        <td><input id="tmpck-to-fri" type="time" value="17:00" style="display: none;"></td>
-					      </tr>
-					      <tr>
-						        <td>Overnight yes/no</td>
-						        <td><input id="chk-ovn-sat" type="checkbox" value="" style="display: none;"></td>
-						        <td><input id="chk-ovn-sun" type="checkbox" value="" style="display: none;"></td>
-						        <td><input id="chk-ovn-mon" type="checkbox" value="" style="display: none;"></td>
-						        <td><input id="chk-ovn-tue" type="checkbox" value="" style="display: none;"></td>
-						        <td><input id="chk-ovn-wed" type="checkbox" value="" style="display: none;"></td>
-						        <td><input id="chk-ovn-thu" type="checkbox" value="" style="display: none;"></td>
-						        <td><input id="chk-ovn-fri" type="checkbox" value="" style="display: none;"></td>
-					      </tr>
-					    </tbody>
-					  </table>
+					<div class="label label-warning " style="font-size: 14px;">** Please use English language</div>
+						
+					<div class="form-group row" style="margin-top: 10px;">
+						<div class="col-xs-10">
+							<input class="form-control" type="text" value="" placeholder="Last Name" id="example-text-input" required data-error="Please fill your Lastname!">
+						</div>
+						<label style="color: red;font-size: 15px;">*</label>
+						<div class="help-block with-errors" style="margin-top: 10px;margin-left: 15px;"></div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-10">
+							<input class="form-control" type="text" value="" placeholder="Middle Initial" id="example-text-input" >
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-10">
+							<input class="form-control" type="text" value="" placeholder="First Name" id="example-text-input" required  data-error="Please fill your First name!">
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+						<div class="help-block with-errors" style="margin-top: 10px;margin-left: 15px;"></div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-10">
+							<input class="form-control" type="text" value="" placeholder="Address" id="example-text-input" required>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-10">
+							<select class="sl-province form-control" id="sl-province" dir="mtl" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
+							    <option value="province" class="province" disabled selected><div style="text-align: center;">Province</div></option>
+							    <option value="bangkok">Bangkok</option>
+							    <option value="nakornpathom">Nakornpathom</option>
+							</select>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row" style="display:none;" id="sl-cityBkk">
+						<div class="col-xs-10">
+							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
+								<option disabled selected>City</option>
+							    <option>Bangrak</option>
+							    <option>Sukhumvit</option>
+							    <option>Bangkae</option>
+							    <option>Chatuchak</option>
+							</select>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row" style="display:none;" id="sl-cityNPT">
+						<div class="col-xs-10">
+							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
+								<option disabled selected>City</option>
+							    <option>Mueng</option>
+							    <option>Sampran</option>
+							    <option>Nakornchaisri</option>
+							    <option>Banglen</option>
+							</select>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-10">
+							<input class="form-control" pattern="^[0-9]*" value="" placeholder="Postal Code" id="example-text-input" data-error="Postal code is only number!">
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-group row" style="margin-bottom:0px;">
+						<div class="col-xs-10">
+							<input class="form-control" type="tel" value="" placeholder="Home Phone" id="tel-home"  style="width: 730px;" pattern="\d*" data-error="Please fill only number!">
+							<div class="help-block with-errors"></div>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row" style="margin-bottom:0px;">
+						<div class="col-xs-10">
+							<input class="form-control" type="tel" value="" placeholder="Alternate Phone" id="tel-alt" pattern="\d*"  style="width: 730px;" data-error="Please fill only number!">
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-group row" style="margin-bottom:0px;">
+						<div class="col-xs-10">
+							<input class="form-control" type="email" id="inputEmail" value="" placeholder="E-mail" data-error="That email address is invalid format!" required >
+							<div class="help-block with-errors"></div>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row" style="margin-bottom:0px;">
+						<div class="col-xs-10">
+							<div style="margin:20px 0 25px 0;">
+							<label>Have you worked at Wal-mart/SAM'S CLUB before : </label>
+							    <label class="radio-inline">
+							      <input type="radio" name="optradio" id="chk-no">No
+							    </label>
+							    <label class="radio-inline">
+							      <input type="radio" name="optradio" id="chk-yes">Yes
+							    </label>
+							</div>
+						</div>
+					</div>
+					<div id="yes-group" style="display:none;">
+						<div class="form-group row">
+							<label for="example-text-input" class="col-xs-2 col-form-label">Which Store : </label>
+							<div class="col-xs-8">
+								<input class="form-control" type="text" value="" placeholder="Which Store" id="example-text-input">
+							</div>
+						</div>
+						<div class="form-group row " style="margin-bottom: 40px;">
+							<label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label>
+							<div class="col-xs-8">
+								<input class="form-control" type="date" value="" placeholder="" id="example-text-input">
+							</div>
+						</div>
+					</div>
+					<div class="form-group row" id="">
+						<div class="col-xs-10">
+							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 40%;">
+								<option disabled selected>Position applying for</option>
+							    <option>GROCERY</option>
+							    <option>FRONT OF STORE</option>
+							    <option>PHARMACY & OPTOMETRY</option>
+							    <option>HOURLY SUPERVISORS</option>
+							</select>
+						</div>
+						<label style="color:red;font-size: 15px;">*</label>
+					</div>
+					<div class="form-group row" style="margin-bottom: 0px;">
+						<div class="col-xs-12 row">
+							<div class="col-xs-4" style="margin-top: 5px;">
+						  		<input type="checkbox" id="chk-season" value=""> 
+						  		<label>Seasonal/Temporary</label>
+						  	</div>
+						  	<div class="txtbox-season col-xs-8" style="display: none; width: 467px;">
+									<input class="form-control " type="text" value="" placeholder="Seasonal/Temporary" id="example-text-input" style="display: inline;">
+							</div>
+						</div>
+					</div>
+					<div class="form-group row" style="margin-bottom: 0px;">
+						<div class="col-xs-10">
+							<div style="margin:20px 0 25px 0;">
+								<label>Are you interested in : </label>
+								<div>
+								      <input type="radio" name="optradio2" id="chk-ft"> Full Time(Min. of 28 hrs per week)
+								</div>
+								<div>
+								      <input type="radio" name="optradio2" id="chk-pt"> Peak Time(Less than 28 hrs per week)
+								 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row" style="margin-bottom: 40px;">
+						<div class="col-xs-10">
+							<textarea  class="form-control" type="text" value="" placeholder="How did you learn about this opportunity?" id="example-text-input"></textarea>
+						</div>
+					</div>
+					<div class="group-available" >
+						<h4 class="align-left"><b>Availability</b></h4>
+						<div style="    border-color: black;
+						    border-style: solid;
+						    height: 1px;
+						    border-width: 2px;
+						    margin-bottom: 20px;"></div>
+						<div class="form-group col-xs-12 row">
+							<label for="example-text-input" class="col-xs-4 col-form-label row" style="margin-top: 7px;">Date available to start : </label>
+							<div class="col-xs-6">
+								<!-- <input class="form-control" type="date" value="" placeholder="" id="example-text-input"> -->
+								<div class="input-append date" id="dp1" data-date-format="mm-dd-yyyy">
+								  <input type="text" class="span2" id="dp1">
+								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> -->
+								</div>
+							</div>
+						</div>
+						<div class="">
+							<p><i>Indicate when you are available to be scheduled(specify a.m. or p.m.). Due to the nature of our business, the more available you are, the more opportunities we can consider you for.</i> 
+							</p>
+						</div>
+						<table class="table table-bordered">
+						    <thead>
+						      <tr>
+						        <th></th>
+						        <th>Saturday</th>
+						        <th>Sunday</th>
+						        <th>Monday</th>
+						        <th>Tuesday</th>
+						        <th>Wednesday</th>
+						        <th>Thursday</th>
+						        <th>Friday</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+							  <tr>
+							  		<td>Available</td>
+							    	<td><input id="chk-sat" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							    	<td><input id="chk-sun" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							    	<td><input id="chk-mon" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							    	<td><input id="chk-tue" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							    	<td><input id="chk-wed" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							    	<td><input id="chk-thu" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							    	<td><input id="chk-fri" type="checkbox" value="" onchange="toggleAvailableTime(this)"></td>
+							  </tr>
+						      <tr>
+							        <td>From</td>
+							        <td><input id="tmpck-fr-sat" type="time" value="08:00" style="display: none;"></td>
+							        <td><input id="tmpck-fr-sun" type="time" value="08:00" style="display: none;"></td>
+							        <td><input id="tmpck-fr-mon" type="time" value="08:00" style="display: none;"></td>
+							        <td><input id="tmpck-fr-tue" type="time" value="08:00" style="display: none;"></td>
+							        <td><input id="tmpck-fr-wed" type="time" value="08:00" style="display: none;"></td>
+							        <td><input id="tmpck-fr-thu" type="time" value="08:00" style="display: none;"></td>
+							        <td><input id="tmpck-fr-fri" type="time" value="08:00" style="display: none;"></td>
+						      </tr>
+						      <tr>
+							        <td>To</td>
+							        <td><input id="tmpck-to-sat" type="time" value="17:00" style="display: none;"></td>
+							        <td><input id="tmpck-to-sun" type="time" value="17:00" style="display: none;"></td>
+							        <td><input id="tmpck-to-mon" type="time" value="17:00" style="display: none;"></td>
+							        <td><input id="tmpck-to-tue" type="time" value="17:00" style="display: none;"></td>
+							        <td><input id="tmpck-to-wed" type="time" value="17:00" style="display: none;"></td>
+							        <td><input id="tmpck-to-thu" type="time" value="17:00" style="display: none;"></td>
+							        <td><input id="tmpck-to-fri" type="time" value="17:00" style="display: none;"></td>
+						      </tr>
+						      <tr>
+							        <td>Overnight yes/no</td>
+							        <td><input id="chk-ovn-sat" type="checkbox" value="" style="display: none;"></td>
+							        <td><input id="chk-ovn-sun" type="checkbox" value="" style="display: none;"></td>
+							        <td><input id="chk-ovn-mon" type="checkbox" value="" style="display: none;"></td>
+							        <td><input id="chk-ovn-tue" type="checkbox" value="" style="display: none;"></td>
+							        <td><input id="chk-ovn-wed" type="checkbox" value="" style="display: none;"></td>
+							        <td><input id="chk-ovn-thu" type="checkbox" value="" style="display: none;"></td>
+							        <td><input id="chk-ovn-fri" type="checkbox" value="" style="display: none;"></td>
+						      </tr>
+						    </tbody>
+						  </table>
+					</div>
+					<br>
+					<div>
+						<img src="pic/captcha.png" alt="" style="width: 300px;">
+						<input class="form-control" type="text" value="" placeholder="Type the text above" id="example-text-input" required  data-error="Please type the text!" style="width: 300px;">
+					</div>
+					 <div style="margin-bottom: 40px; margin-top: 10px; "><button type="" class="btn btn-primary" style="width: 100px;">Submit</button></div>
 				</div>
-				 <div class="row" style="margin-bottom: 40px; margin-top: 40px;"><center><button type="" class="btn btn-primary">Submit</button></center></div>  
 			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 </body>
 </html>
 
@@ -299,20 +319,49 @@
         		$('.group-available').hide();
     		}
 		});
-
 	});	
 
-function toggleAvailableTime(obj) {
-	day = obj.id.substr(4);
-	if(obj.checked) {
-		$('#tmpck-fr-'+day).show();
-		$('#tmpck-to-'+day).show();
-		$('#chk-ovn-'+day).show();
-	}else{
-		$('#tmpck-fr-'+day).hide();
-		$('#tmpck-to-'+day).hide();
-		$('#chk-ovn-'+day).hide();
+	function toggleAvailableTime(obj) {
+		day = obj.id.substr(4);
+		if(obj.checked) {
+			$('#tmpck-fr-'+day).show();
+			$('#tmpck-to-'+day).show();
+			$('#chk-ovn-'+day).show();
+		}else{
+			$('#tmpck-fr-'+day).hide();
+			$('#tmpck-to-'+day).hide();
+			$('#chk-ovn-'+day).hide();
+		}
 	}
-}
+
+	 $('#dp1').click(function(){
+		$('#dp1').datepicker({
+	  		onRender: function(date) {
+	    		return date.valueOf() < now.valueOf() ? 'disabled' : '';
+	    	}
+		});
+ 	 });
+
+ 	//text box season/temp=
+	$("#chk-season").change(function() {
+		if(this.checked) {
+			if($('.txtbox-season').is(":visible")){
+				$('.txtbox-season').hide();
+			}else{
+				$('.txtbox-season').show();
+			}
+		}else{
+			if($('.txtbox-season').is(":visible")){
+				$('.txtbox-season').hide();
+			}else{
+				$('.txtbox-season').show();
+			}
+		}
+	});
+
+	//input type tel
+	$("#tel-home").intlTelInput();
+	$("#tel-alt").intlTelInput();
+	
 </script>
 
