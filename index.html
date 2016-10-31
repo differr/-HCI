@@ -130,10 +130,15 @@
 					</div>
 					<div id="yes-group" style="display:none;">
 						<div class="form-group row">
-							<!-- <label for="example-text-input" class="col-xs-2 col-form-label">Which Store : </label> -->
 							<div class="col-xs-10">
-								<input class="form-control" type="text" value="" placeholder="Which Store" id="example-text-input">
-							</div>
+							<select class="form-control" id="sl-whichStore" style="width: 730px;height: 37px;padding: 0 0 0 40%;">
+								<option disabled selected>Which Store</option>
+							    <option>GROCERY</option>
+							    <option>FRONT OF STORE</option>
+							    <option>PHARMACY & OPTOMETRY</option>
+							    <option>HOURLY SUPERVISORS</option>
+							</select>
+						</div>
 						</div>
 						<div class="form-group row " >
 							<!-- <label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label> -->
@@ -144,19 +149,29 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group row" id="">
-						<div class="col-xs-10">
-							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 40%;">
-								<option disabled selected>Position applying for</option>
-							    <option>GROCERY</option>
-							    <option>FRONT OF STORE</option>
-							    <option>PHARMACY & OPTOMETRY</option>
-							    <option>HOURLY SUPERVISORS</option>
-							</select>
+						<div class="form-group row" id="">
+							<div class="col-xs-10">
+								<select class="form-control" id="sl-grocery" style="width: 730px;height: 37px;padding: 0 0 0 40%; display:none;">
+									<option disabled selected>Position applying for</option>
+								    <option>Bakery</option>
+								    <option>Deli</option>
+								    <option>Meat</option>
+								    <option>Produce</option>
+								    <option>Frozen & Dairy</option>
+								</select>
+							</div>
+							<div class="col-xs-10">
+								<select class="form-control" id="sl-frontOfStore" style="width: 730px;height: 37px;padding: 0 0 0 40%; display:none;">
+									<option disabled selected>Position applying for</option>
+								    <option>Cashiers</option>
+								    <option>Customer Service Desk</option>
+								    <option>Cart Pushers</option>
+								</select>
+							</div>
+							<!-- <label style="color:red;font-size: 15px;">*</label> -->
 						</div>
-						<label style="color:red;font-size: 15px;">*</label>
 					</div>
+					
 					<div class="form-group row" style="margin-bottom: 0px;">
 						<div class="col-xs-12 row">
 							<div class="col-xs-4" style="margin-top: 5px;">
@@ -296,6 +311,25 @@
 	  				$('#sl-cityBkk').show();
 	  			}else{
 	  				$('#sl-cityBkk').show();
+	  			}
+	  		}
+		});
+
+		//select store to show its dropdown position
+		$('#sl-whichStore').change(function(){
+	  		if($(this).val() == "GROCERY"){ 
+	  			if($('#sl-frontOfStore').is(":visible")){
+	  				$('#sl-frontOfStore').hide();
+	  				$('#sl-grocery').show();
+	  			}else {
+	  				$('#sl-grocery').show();
+	  			}
+	  		}else if($(this).val() == "FRONT OF STORE"){
+	  			if($('#sl-grocery').is(":visible")){
+	  				$('#sl-grocery').hide();
+	  				$('#sl-frontOfStore').show();
+	  			}else{
+	  				$('#sl-frontOfStore').show();
 	  			}
 	  		}
 		});
