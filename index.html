@@ -131,7 +131,7 @@
 					<div id="yes-group" style="display:none;">
 						<div class="form-group row">
 							<div class="col-xs-10">
-							<select class="form-control" id="sl-whichStore" style="width: 730px;height: 37px;padding: 0 0 0 40%;">
+							<select class="form-control" id="sl-whichStore" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
 								<option disabled selected>Which Store</option>
 							    <option>GROCERY</option>
 							    <option>FRONT OF STORE</option>
@@ -140,8 +140,7 @@
 							</select>
 						</div>
 						</div>
-						<div class="form-group row " >
-							<!-- <label for="example-text-input" class="col-xs-2 col-form-label">Note Dates : </label> -->
+						<div class="form-group row " style="margin-bottom: 40px;">
 							<div class="col-xs-10">
 								<div class="input-append date" id="dp2" data-date-format="mm-dd-yyyy">
 								  <input type="text" class=" form-control span2" id="dp2" placeholder="Note Dates">
@@ -149,29 +148,24 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group row" id="">
-							<div class="col-xs-10">
-								<select class="form-control" id="sl-grocery" style="width: 730px;height: 37px;padding: 0 0 0 40%; display:none;">
-									<option disabled selected>Position applying for</option>
-								    <option>Bakery</option>
-								    <option>Deli</option>
-								    <option>Meat</option>
-								    <option>Produce</option>
-								    <option>Frozen & Dairy</option>
-								</select>
-							</div>
-							<div class="col-xs-10">
-								<select class="form-control" id="sl-frontOfStore" style="width: 730px;height: 37px;padding: 0 0 0 40%; display:none;">
-									<option disabled selected>Position applying for</option>
-								    <option>Cashiers</option>
-								    <option>Customer Service Desk</option>
-								    <option>Cart Pushers</option>
-								</select>
-							</div>
-							<!-- <label style="color:red;font-size: 15px;">*</label> -->
+					</div>
+					<h4 class="align-left"><b>Position</b></h4>
+					<div style="    border-color: black;
+					    border-style: solid;
+					    height: 1px;
+					    border-width: 2px;
+					    margin-bottom: 20px;">
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-12">
+							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 35%;">
+								<option disabled selected>Position applying for</option>
+							    <option>Cashiers</option>
+							    <option>Customer Service Desk</option>
+							    <option>Cart Pushers</option>
+							</select>
 						</div>
 					</div>
-					
 					<div class="form-group row" style="margin-bottom: 0px;">
 						<div class="col-xs-12 row">
 							<div class="col-xs-4" style="margin-top: 5px;">
@@ -201,7 +195,7 @@
 							<textarea  class="form-control" type="text" value="" placeholder="How did you learn about this opportunity?" id="example-text-input"></textarea>
 						</div>
 					</div>
-					<div class="group-available" >
+					<div class="group-available">
 						<h4 class="align-left"><b>Availability</b></h4>
 						<div style="    border-color: black;
 						    border-style: solid;
@@ -209,7 +203,6 @@
 						    border-width: 2px;
 						    margin-bottom: 20px;"></div>
 						<div class="form-group col-xs-12 row" >
-							<!-- <label for="example-text-input" class="col-xs-4 col-form-label row" style="margin-top: 7px;">Date available to start : </label> -->
 							<div class="col-xs-6 row" style="width: 757px;">
 								<div class="input-append date" id="dp1" data-date-format="mm-dd-yyyy">
 								  <input type="text" class=" form-control span2" id="dp1" placeholder="Date available to start">
@@ -217,7 +210,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="">
+						<div class="group-available-sub" style="display:none;">
+							<div class="">
 							<p><i>Indicate when you are available to be scheduled(specify a.m. or p.m.). Due to the nature of our business, the more available you are, the more opportunities we can consider you for.</i> 
 							</p>
 						</div>
@@ -277,6 +271,7 @@
 						      </tr>
 						    </tbody>
 						  </table>
+						</div>
 					</div>
 					<br>
 					<div>
@@ -315,25 +310,7 @@
 	  		}
 		});
 
-		//select store to show its dropdown position
-		$('#sl-whichStore').change(function(){
-	  		if($(this).val() == "GROCERY"){ 
-	  			if($('#sl-frontOfStore').is(":visible")){
-	  				$('#sl-frontOfStore').hide();
-	  				$('#sl-grocery').show();
-	  			}else {
-	  				$('#sl-grocery').show();
-	  			}
-	  		}else if($(this).val() == "FRONT OF STORE"){
-	  			if($('#sl-grocery').is(":visible")){
-	  				$('#sl-grocery').hide();
-	  				$('#sl-frontOfStore').show();
-	  			}else{
-	  				$('#sl-frontOfStore').show();
-	  			}
-	  		}
-		});
-
+		
 		// click radio button Question "Have you worked at Wal-mart/SAM'S CLUB before :"
 		$("#chk-yes").change(function() {
     		if(this.checked) {
@@ -347,12 +324,12 @@
 		});
 		$("#chk-pt").change(function() {
     		if(this.checked) {
-        		$('.group-available').show();
+        		$('.group-available-sub').show();
     		}
 		});
 		$("#chk-ft").change(function() {
     		if(this.checked) {
-        		$('.group-available').hide();
+        		$('.group-available-sub').hide();
     		}
 		});
 
