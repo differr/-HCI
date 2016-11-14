@@ -16,7 +16,7 @@
 <body>
 	<div class="container">
 		<div style="display: block;margin: auto;width: 80%;">
-			<form role="form" data-toggle="validator" id="myForm">
+			<form role="form" data-toggle="validator" id="myForm">	
 				<div class="col-md-12">
 					<div class="">
 						<img src="pic/banner1.png" alt="">
@@ -28,7 +28,6 @@
 						    margin-bottom: 20px;"></div>
 					</div>
 					<div class="label label-warning " style="font-size: 14px;">** Please use English language</div>
-						
 					<div class="form-group row" style="margin-top: 10px;">
 						<div class="col-xs-10">
 							<input class="form-control" type="text" value="" placeholder="Last Name" id="example-text-input" required data-error="Please fill your Lastname!">
@@ -55,37 +54,40 @@
 						<label style="color:red;font-size: 15px;">*</label>
 						<div class="help-block with-errors" style="margin-top: 10px;margin-left: 15px;"></div>
 					</div>
-					<div class="form-group row">
+					<div class="form-group row" id="sl-province-main">
 						<div class="col-xs-10">
 							<select class="sl-province form-control" id="sl-province" dir="mtl" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
-							    <option value="province" class="province" disabled selected><div style="text-align: center;">Province</div></option>
+							    <option value="" class="province" disabled selected><div style="text-align: center;">Province</div></option>
 							    <option value="bangkok">Bangkok</option>
 							    <option value="nakornpathom">Nakornpathom</option>
 							</select>
+							<div id="txt-warning-prov" style="color :#a94442;"></div>
 						</div>
 						<label style="color:red;font-size: 15px;">*</label>
 					</div>
 					<div class="form-group row" style="display:none;" id="sl-cityBkk">
 						<div class="col-xs-10">
 							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
-								<option disabled selected>City</option>
-							    <option>Bangrak</option>
-							    <option>Sukhumvit</option>
-							    <option>Bangkae</option>
-							    <option>Chatuchak</option>
+								<option value="" disabled selected>City</option>
+							    <option value="Bangrak">Bangrak</option>
+							    <option value="Sukhumvit">Sukhumvit</option>
+							    <option value="Bangkae">Bangkae</option>
+							    <option value="Chatuchak">Chatuchak</option>
 							</select>
+							<div id="txt-warning-cityBkk" style="color :#a94442;"></div>
 						</div>
 						<label style="color:red;font-size: 15px;">*</label>
 					</div>
 					<div class="form-group row" style="display:none;" id="sl-cityNPT">
 						<div class="col-xs-10">
 							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 45%;">
-								<option disabled selected>City</option>
-							    <option>Mueng</option>
-							    <option>Sampran</option>
-							    <option>Nakornchaisri</option>
-							    <option>Banglen</option>
+								<option value="" disabled selected>City</option>
+							    <option value="Mueng">Mueng</option>
+							    <option value="Sampran">Sampran</option>
+							    <option value="Nakornchaisri">Nakornchaisri</option>
+							    <option value="Banglen">Banglen</option>
 							</select>
+							<div id="txt-warning-cityNpt" style="color :#a94442;"></div>
 						</div>
 						<label style="color:red;font-size: 15px;">*</label>
 					</div>
@@ -97,7 +99,7 @@
 					</div>
 					<div class="form-group row" style="margin-bottom:0px;">
 						<div class="col-xs-10">
-							<input class="form-control" type="tel" value="" placeholder="Home Phone" id="tel-home"  style="width: 730px;" pattern="\d*" data-error="Please fill only number!">
+							<input class="form-control" type="tel" value="" placeholder="Home Phone" id="tel-home"  style="width: 730px;" pattern="\d*" data-error="Please fill only number!" required>
 							<div class="help-block with-errors"></div>
 						</div>
 						<label style="color:red;font-size: 15px;">*</label>
@@ -182,7 +184,7 @@
 							<div style="margin:20px 0 25px 0;">
 								<label>Are you interested in : </label>
 								<div>
-								      <input type="radio" name="optradio2" id="chk-ft"> Full Time(Min. of 28 hrs per week)
+								      <input type="radio" checked="checked" name="optradio2" id="chk-ft"> Full Time(Min. of 28 hrs per week)
 								</div>
 								<div>
 								      <input type="radio" name="optradio2" id="chk-pt"> Peak Time(Less than 28 hrs per week)
@@ -204,11 +206,13 @@
 						    margin-bottom: 20px;"></div>
 						<div class="form-group col-xs-12 row" >
 							<div class="col-xs-6 row" style="width: 757px;">
-								<div class="input-append date" id="dp1" data-date-format="mm-dd-yyyy">
-								  <input type="text" class=" form-control span2" id="dp1" placeholder="Date available to start">
-								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> <--></-->
+								<div class="form-group input-append date" id="dp1" data-date-format="mm-dd-yyyy">
+								  <input type="text" class=" form-control span2" id="dp1" placeholder="Date available to start" data-error="Please select available date" required>
+								  <div class="help-block with-errors"></div>
+								  <!-- <span class="add-on" id="icon-calendar"><i class="icon-calendar"></i></span> <--></-->								  
 								</div>
 							</div>
+							<label style="color: red;font-size: 15px;">&nbsp;&nbsp;&nbsp;*</label>
 						</div>
 						<div class="group-available-sub" style="display:none;">
 							<div class="">
@@ -278,7 +282,10 @@
 						<img src="pic/captcha.png" alt="" style="width: 300px;">
 						<input class="form-control" type="text" value="" placeholder="Type the text above" id="example-text-input" required  data-error="Please type the text!" style="width: 300px;">
 					</div>
-					 <div style="margin-bottom: 40px; margin-top: 10px; "><button type="" class="btn btn-primary" style="width: 100px;">Submit</button></div>
+					 <div style="margin-bottom: 40px; margin-top: 50px; ">
+						 <button type="" onclick="checkField()" class="btn btn-primary" style="width: 100px;">Apply</button>	
+						 <button type="" id="btn-cancel" onclick="cancelButton()" class="btn" style="width: 100px;">Cancel</button>
+					 </div>
 				</div>
 			</div>
 		</form>
@@ -287,11 +294,18 @@
 </html>
 
 <script type="text/javascript">
+	var selectedProv = "";
+	var selectedCityBkk = "";
+	var selectedCityNPT = "";
+
+
+
 	$(document).ready(function () {
 		// validation form
 		$('#myForm').validator()
 
 		// select province to show dropdown city
+		
 		$('#sl-province').change(function(){
 	  		if($(this).val() == "nakornpathom"){ 
 	  			if($('#sl-cityBkk').is(":visible")){
@@ -300,6 +314,8 @@
 	  			}else {
 	  				$('#sl-cityNPT').show();
 	  			}
+	  			selectedProv = "nakornpathom";
+	  			console.log(selectedProv);
 	  		}else if($(this).val() == "bangkok"){
 	  			if($('#sl-cityNPT').is(":visible")){
 	  				$('#sl-cityNPT').hide();
@@ -307,10 +323,21 @@
 	  			}else{
 	  				$('#sl-cityBkk').show();
 	  			}
+	  			selectedProv = "bangkok";
+	  			console.log(selectedProv);
 	  		}
 		});
 
-		
+		$('#sl-cityBkk').change(function(){
+			selectedCityBkk = $(this).val();
+			console.log(selectedCityBkk);
+		});
+
+		$('#sl-cityNPT').change(function(){
+			selectedCityNPT = $(this).val();
+			console.log(selectedCityNPT);
+		});
+
 		// click radio button Question "Have you worked at Wal-mart/SAM'S CLUB before :"
 		$("#chk-yes").change(function() {
     		if(this.checked) {
@@ -387,7 +414,25 @@
 		}
 	}
 
-	 
+	function cancelButton() {
+    	var answer = confirm ("Are you sure to exit this application?")
+		if (answer){
+		    window.location = 'exit.html';
+		}   	
+	}
+
+	function checkField() {
+		//alert(selected);
+    	if (selectedProv == '') {
+	        $('#txt-warning-prov').text("Please select province !");
+	    }else if(selectedCityBkk == ''){
+	    	$('#txt-warning-cityBkk').text("Please select city !");
+	    }else if(selectedCityNPT == ''){
+	    	$('#txt-warning-cityNpt').text("Please select city !");
+	    }else{
+    		window.location = 'complete.html';
+	    }
+	}
 	
 </script>
 
