@@ -158,14 +158,15 @@
 					    border-width: 2px;
 					    margin-bottom: 20px;">
 					</div>
-					<div class="form-group row">
+					<div class="form-group row" >
 						<div class="col-xs-12">
-							<select class="form-control" style="width: 730px;height: 37px;padding: 0 0 0 35%;">
-								<option disabled selected>Position applying for</option>
-							    <option>Cashiers</option>
-							    <option>Customer Service Desk</option>
-							    <option>Cart Pushers</option>
+							<select class="form-control" id="sl-position" style="width: 730px;height: 37px;padding: 0 0 0 35%;">
+								<option value="" disabled selected >Position applying for</option>
+							    <option value="Cashiers">Cashiers</option>
+							    <option value="Customer Service Desk">Customer Service Desk</option>
+							    <option value="Cart Pushers">Cart Pushers</option>
 							</select>
+							<div id="txt-warning-pos" style="color :#a94442;"></div>
 						</div>
 					</div>
 					<div class="form-group row" style="margin-bottom: 0px;">
@@ -280,7 +281,8 @@
 					<br>
 					<div>
 						<img src="pic/captcha.png" alt="" style="width: 300px;">
-						<input class="form-control" type="text" value="" placeholder="Type the text above" id="example-text-input" required  data-error="Please type the text!" style="width: 300px;">
+						<input id="captcha" class="form-control" type="text" value="" placeholder="Type the text above" id="example-text-input" required  data-error="Please type the text!" style="width: 300px;">
+						<div id="txt-warning-captcha" style="color :#a94442;"></div>
 					</div>
 					 <div style="margin-bottom: 40px; margin-top: 50px; ">
 						 <button type="" onclick="checkField()" class="btn btn-primary" style="width: 100px;">Apply</button>	
@@ -297,8 +299,50 @@
 	var selectedProv = "";
 	var selectedCityBkk = "";
 	var selectedCityNPT = "";
+	var selectedPos = "";
+	var captcha = "";
+
+	$('#sl-province').change(function(){
+	  		if($(this).val() == "nakornpathom"){ 
+	  			if($('#sl-cityBkk').is(":visible")){
+	  				$('#sl-cityBkk').hide();
+	  				$('#sl-cityNPT').show();
+	  				$('#txt-warning-cityNpt').text("");
+	  			}else {
+	  				$('#sl-cityNPT').show();
+	  				$('#txt-warning-cityNpt').text("");
+	  			}
+	  			selectedProv = "nakornpathom";
+	  			$('#txt-warning-prov').text("");
+	  		}else if($(this).val() == "bangkok"){
+	  			if($('#sl-cityNPT').is(":visible")){
+	  				$('#sl-cityNPT').hide();
+	  				$('#sl-cityBkk').show();
+	  				$('#txt-warning-cityBkk').text("");
+	  			}else{
+	  				$('#sl-cityBkk').show();
+	  				$('#txt-warning-cityBkk').text("");
+	  			}
+	  			selectedProv = "bangkok";
+	  			$('#txt-warning-prov').text("");
+	  		}
+	});
 
 
+	$('#sl-cityBkk').change(function(){
+		selectedCityBkk = "selected";
+		$('#txt-warning-cityBkk').text("");
+	});
+
+	$('#sl-cityNPT').change(function(){
+		selectedCityNPT = "selected";
+		$('#txt-warning-cityNpt').text("");
+	});
+
+	$('#sl-position').change(function(){
+		selectedPos = "selected";
+		$('#txt-warning-pos').text("");
+	});
 
 	$(document).ready(function () {
 		// validation form
@@ -306,37 +350,7 @@
 
 		// select province to show dropdown city
 		
-		$('#sl-province').change(function(){
-	  		if($(this).val() == "nakornpathom"){ 
-	  			if($('#sl-cityBkk').is(":visible")){
-	  				$('#sl-cityBkk').hide();
-	  				$('#sl-cityNPT').show();
-	  			}else {
-	  				$('#sl-cityNPT').show();
-	  			}
-	  			selectedProv = "nakornpathom";
-	  			console.log(selectedProv);
-	  		}else if($(this).val() == "bangkok"){
-	  			if($('#sl-cityNPT').is(":visible")){
-	  				$('#sl-cityNPT').hide();
-	  				$('#sl-cityBkk').show();
-	  			}else{
-	  				$('#sl-cityBkk').show();
-	  			}
-	  			selectedProv = "bangkok";
-	  			console.log(selectedProv);
-	  		}
-		});
-
-		$('#sl-cityBkk').change(function(){
-			selectedCityBkk = $(this).val();
-			console.log(selectedCityBkk);
-		});
-
-		$('#sl-cityNPT').change(function(){
-			selectedCityNPT = $(this).val();
-			console.log(selectedCityNPT);
-		});
+		
 
 		// click radio button Question "Have you worked at Wal-mart/SAM'S CLUB before :"
 		$("#chk-yes").change(function() {
@@ -425,12 +439,37 @@
 		//alert(selected);
     	if (selectedProv == '') {
 	        $('#txt-warning-prov').text("Please select province !");
-	    }else if(selectedCityBkk == ''){
+	    }else{
+	    	$('#txt-warning-prov').text("");
+	    }
+
+
+	    if(selectedCityBkk == ''){
 	    	$('#txt-warning-cityBkk').text("Please select city !");
-	    }else if(selectedCityNPT == ''){
+	    }else{
+	    	$('#txt-warning-cityBkk').text("");
+	    }
+	    if(selectedCityNPT == ''){
 	    	$('#txt-warning-cityNpt').text("Please select city !");
 	    }else{
-    		window.location = 'complete.html';
+    		$('#txt-warning-cityNpt').text("");
+	    }
+
+	    if(selectedProv != "" && ( selectedCityBkk != "" || selectedCityNPT != "")){
+	    	window.location = 'complete.html';
+	    }
+
+	    if(selectedPos == "") {
+	        $('#txt-warning-pos').text("Please select position !");
+	    }else{
+	    	$('#txt-warning-pos').text("");
+	    }
+
+	    
+	    var value = String($('#captcha').val());
+	    console.log(value);
+	    if(!value.localeCompare("WD54J")){
+	    	 $('#txt-warning-captcha').text("Incorrect captcha!");
 	    }
 	}
 	
