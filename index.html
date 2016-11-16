@@ -425,27 +425,7 @@
 		$("#tel-alt").intlTelInput();
 
 
-		$('#lname').change(function() {
-			lname = $(this).val();
-		});
-		$('#fname').change(function() {
-			fname = $(this).val();
-		});
-		$('#address').change(function() {
-			add = $(this).val();
-		});
-		$('#tel-home').change(function() {
-			hphone = $(this).val();
-		});
-		$('#inputEmail').change(function() {
-			mail = $(this).val();
-		});
-		$('#dateStart').change(function() {
-			dateStart = $(this).val();
-		});
-		$('#captcha').change(function() {
-			captcha = $(this).val();
-		});
+		
 	});	
 	// end document ready
 
@@ -469,6 +449,29 @@
 		}   	
 	}
 
+	//validate field
+	$('#lname').change(function() {
+		lname = $(this).val();
+	});
+	$('#fname').change(function() {
+		fname = $(this).val();
+	});
+	$('#address').change(function() {
+		add = $(this).val();
+	});
+	$('#tel-home').change(function() {
+		hphone = $(this).val();
+	});
+	$('#inputEmail').change(function() {
+		mail = $(this).val();
+	});
+	$('#dateStart').change(function() {
+		dateStart = $(this).val();
+	});
+	$('#captcha').change(function() {
+		captcha = $(this).val();
+	});
+
 	function checkField() {
 		//alert(selected);
     	if (selectedProv == '') {
@@ -488,7 +491,7 @@
     		$('#txt-warning-cityNpt').text("");
 	    }
 
-	    if(selectedPos == "") {
+	    if(selectedPos == '') {
 	        $('#txt-warning-pos').text("Please select position !");
 	    }else{
 	    	$('#txt-warning-pos').text("");
@@ -498,8 +501,10 @@
 	    	$('#txt-warning-captcha').text("Incorrect captcha!");
 	    	captResult = false;
 	    }
-			
-	    if(selectedProv != "" 
+		
+		
+
+		if(selectedProv != "" 
 	    	&& ( selectedCityBkk != "" || selectedCityNPT != "") 
 	    	&& captResult 
 	    	&& lname != "" 
@@ -509,10 +514,13 @@
 	    	&& mail != "" 
 	    	&& dateStart != ""){
 	    	
-	    	// alert("Your application has been received. Our team will contact you shorlty. If you have any questions, please contact us at (+66) 999-9999 or via e-mail at contract@walmart.com");
-	   		 window.location.href = 'complete.html';
-	    }
+	    	alert("Your application has been received. Our team will contact you shorlty. If you have any questions, please contact us at (+66) 999-9999 or via e-mail at contract@walmart.com");
+	   		//window.location = 'complete.html';
+	    }	
+
 	}
 	
 </script>
+
+
 
